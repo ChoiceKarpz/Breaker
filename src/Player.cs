@@ -42,15 +42,15 @@ namespace MyGame
 
 		public override void Draw ()
 		{
-			SwinGame.FillRectangle (Color, XLocation, YLocation, _width, _height);
+			SwinGame.FillRectangle (Color, XLocation, YLocation, Width, Height);
 		}
 
 		public override void CheckCollision ()
 		{
-			if (XLocation + _width >= GameMain.ScreenWidth)
-				XLocation = GameMain.ScreenWidth - _width;
+			if (XLocation + Width > GameMain.ScreenWidth)
+				XLocation = GameMain.ScreenWidth - Width;
 
-			if (XLocation < GameMain.ScreenWidth)
+			if (XLocation < 0)
 				XLocation = 0;
 		}
 

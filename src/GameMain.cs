@@ -9,6 +9,8 @@ namespace MyGame
 		public static readonly int ScreenHeight = 600;
         public static void Main()
         {
+			//get game ready
+			PlayingField.GenerateWalls ();
 			
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);

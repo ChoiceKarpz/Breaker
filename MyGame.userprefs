@@ -5,14 +5,16 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Wall.cs">
     <Files>
-      <File FileName="src\GameMain.cs" Line="11" Column="55" />
-      <File FileName="src\PlayingField.cs" Line="15" Column="19" />
-      <File FileName="src\GameObject.cs" Line="47" Column="5" />
-      <File FileName="src\MovableObject.cs" Line="7" Column="10" />
-      <File FileName="src\Ball.cs" Line="36" Column="24" />
-      <File FileName="src\Player.cs" Line="2" Column="18" />
+      <File FileName="src\GameMain.cs" Line="9" Column="48" />
+      <File FileName="src\PlayingField.cs" Line="66" Column="14" />
+      <File FileName="src\GameObject.cs" Line="1" Column="1" />
+      <File FileName="src\MovableObject.cs" Line="1" Column="1" />
+      <File FileName="src\Player.cs" Line="1" Column="1" />
+      <File FileName="src\StationaryObject.cs" Line="42" Column="12" />
+      <File FileName="src\Wall.cs" Line="1" Column="1" />
+      <File FileName="src\Ball.cs" Line="22" Column="63" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>
