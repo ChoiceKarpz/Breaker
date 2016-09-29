@@ -14,8 +14,20 @@ namespace MyGame
 			_height = height;
 		}
 
-		public Player () : this (350, 580, 2, 0, 100, 10)
+		public Player () : this (350, 580, 5, 0, 100, 10)
 		{
+		}
+
+		public int Width {
+			get {
+				return _width;
+			}
+		}
+
+		public int Height {
+			get {
+				return _height;
+			}
 		}
 
 		public void AddToPoints (int i)

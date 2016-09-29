@@ -4,25 +4,27 @@ using System.Collections.Generic;
 
 namespace MyGame
 {
-	public class PlayingField
+	public static class PlayingField
 	{
 		//static List<Bricks> _Bricks = new List<Bricks>();
 		//static List<Wall> _Walls = new List<Wall>();
-		public Player myPlayer = new Player ();
-		public Ball myBall = new Ball ();
+		public static Player myPlayer = new Player ();
+		public static Ball myBall = new Ball ();
 
-		public void DrawField ()
+
+		public static void DrawField ()
 		{
 			myBall.Draw ();
 			myPlayer.Draw ();
 		}
 
-		public void ProcessMovement ()
+		public static void ProcessMovement ()
 		{
 			myBall.Move ();
+			myBall.CheckCollision ();
 		}
 
-		public void ProcessInput ()
+		public static void ProcessInput ()
 		{
 			if (SwinGame.KeyDown (KeyCode.vk_RIGHT))
 				myPlayer.MoveRight ();

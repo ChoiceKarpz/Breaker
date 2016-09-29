@@ -40,5 +40,6 @@ namespace MyGame
 		public abstract void Reset ();
 
 		public abstract void CheckCollision ();
+
 	}
 }

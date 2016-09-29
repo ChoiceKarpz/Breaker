@@ -12,8 +12,7 @@ namespace MyGame
 			
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);
-			PlayingField myField = new PlayingField ();
-            
+
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
             {
@@ -22,9 +21,9 @@ namespace MyGame
 
 				//Clear the screen and draw the framerate
 				SwinGame.ClearScreen (Color.Black);
-				myField.DrawField ();
-				myField.ProcessInput ();
-				myField.ProcessMovement ();
+				PlayingField.DrawField ();
+				PlayingField.ProcessInput ();
+				PlayingField.ProcessMovement ();
 
                 SwinGame.DrawFramerate(0,0);
                 

@@ -3,6 +3,7 @@ using SwinGameSDK;
 
 namespace MyGame
 {
+
 	public class Ball : MovableObject
 	{
 		private int _radius;
@@ -24,7 +25,15 @@ namespace MyGame
 		//ball should check if it collides with any of the walls or paddles, and reflects appropriately 
 		public override void CheckCollision ()
 		{
-			throw new NotImplementedException();
+			if ((XLocation + _radius >= GameMain.ScreenWidth) || (XLocation - _radius <= 0))
+				XSpeed = Reflect (XSpeed);
+			if ((YLocation + _radius >= GameMain.ScreenHeight) || (YLocation - _radius <= 0))
+				YSpeed = Reflect (YSpeed);
+
+			if (SwinGame.CircleRectCollision (SwinGame.CreateCircle (XLocation, YLocation, _radius), SwinGame.CreateRectangle (PlayingField.myPlayer.XLocation, PlayingField.myPlayer.YLocation, PlayingField.myPlayer.Width, PlayingField.myPlayer.Height)))
+				YSpeed = Reflect (YSpeed);                                                                                                   	
+			                                                                                                            
+		
 		}
 
 		public override void Reset ()
@@ -37,9 +46,9 @@ namespace MyGame
 
 		}
 
-		public void Reflect ()
+		public float Reflect (float n)
 		{
-			SwinGame.CreateCircle (XLocation, YLocation, _radius);
+			return n * -1;
 		}
 	}
 }
