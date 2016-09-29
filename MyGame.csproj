@@ -75,6 +75,8 @@
     <Compile Include="src\GameMain.cs" />
     <Compile Include="src\GameObject.cs" />
     <Compile Include="src\PlayingField.cs" />
+    <Compile Include="src\MovableObject.cs" />
+    <Compile Include="src\Ball.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

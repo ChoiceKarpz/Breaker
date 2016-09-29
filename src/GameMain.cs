@@ -15,9 +15,10 @@ namespace MyGame
             {
                 //Fetch the next batch of UI interaction
                 SwinGame.ProcessEvents();
-                
-                //Clear the screen and draw the framerate
-                SwinGame.ClearScreen(Color.White);
+
+				//Clear the screen and draw the framerate
+				SwinGame.ClearScreen (Color.Black);
+				PlayingField.DrawField ();
                 SwinGame.DrawFramerate(0,0);
                 
                 //Draw onto the screen
