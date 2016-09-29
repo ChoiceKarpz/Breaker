@@ -14,7 +14,7 @@ namespace MyGame
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);
 
             //Run the game loop
-            while(false == SwinGame.WindowCloseRequested())
+			while(!SwinGame.WindowCloseRequested() && !SwinGame.KeyTyped(KeyCode.vk_ESCAPE))
             {
                 //Fetch the next batch of UI interaction
                 SwinGame.ProcessEvents();
