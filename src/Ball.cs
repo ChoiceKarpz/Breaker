@@ -12,7 +12,7 @@ namespace MyGame
 			_radius = radius;
 		}
 
-		public Ball () : this (400, 300, 20, 20, 10)
+		public Ball () : this (400, 300, 5, 5, 10)
 		{
 		}
 

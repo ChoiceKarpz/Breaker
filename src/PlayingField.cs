@@ -7,12 +7,18 @@ namespace MyGame
 	{
 		//static List<Bricks> _Bricks = new List<Bricks>();
 		//static List<Wall> _Walls = new List<Wall>();
-		//static Player mainPlayer = new Player ();
+		static Player myPlayer = new Player ();
 		public static Ball myBall = new Ball ();
 
 		public static void DrawField ()
 		{
 			myBall.Draw ();
+			myPlayer.Draw ();
+		}
+
+		public static void ProcessMovement ()
+		{
+			myBall.Move ();
 		}
 
 		//public static Brick[] Bricks {
