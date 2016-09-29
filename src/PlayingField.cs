@@ -1,24 +1,34 @@
 ﻿using System;
+using SwinGameSDK;
 using System.Collections.Generic;
 
 namespace MyGame
 {
-	public static class PlayingField
+	public class PlayingField
 	{
 		//static List<Bricks> _Bricks = new List<Bricks>();
 		//static List<Wall> _Walls = new List<Wall>();
-		static Player myPlayer = new Player ();
-		public static Ball myBall = new Ball ();
+		public Player myPlayer = new Player ();
+		public Ball myBall = new Ball ();
 
-		public static void DrawField ()
+		public void DrawField ()
 		{
 			myBall.Draw ();
 			myPlayer.Draw ();
 		}
 
-		public static void ProcessMovement ()
+		public void ProcessMovement ()
 		{
 			myBall.Move ();
+		}
+
+		public void ProcessInput ()
+		{
+			if (SwinGame.KeyDown (KeyCode.vk_RIGHT))
+				myPlayer.MoveRight ();
+
+			if (SwinGame.KeyDown (KeyCode.vk_LEFT))
+				myPlayer.MoveLeft ();
 		}
 
 		//public static Brick[] Bricks {

@@ -14,7 +14,7 @@ namespace MyGame
 			_height = height;
 		}
 
-		public Player () : this (350, 580, 10, 0, 100, 10)
+		public Player () : this (350, 580, 2, 0, 100, 10)
 		{
 		}
 
@@ -35,7 +35,21 @@ namespace MyGame
 
 		public override void CheckCollision ()
 		{
-			throw new NotImplementedException ();
+			if (XLocation + _width >= GameMain.ScreenWidth)
+				XLocation = GameMain.ScreenWidth - _width;
+
+			if (XLocation < GameMain.ScreenWidth)
+				XLocation = 0;
+		}
+
+		public void MoveRight ()
+		{
+			XLocation += XSpeed;
+		}
+
+		public void MoveLeft ()
+		{
+			XLocation -= XSpeed;
 		}
 	}
 }

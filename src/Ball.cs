@@ -36,5 +36,10 @@ namespace MyGame
 			Color = Color.White;
 
 		}
+
+		public void Reflect ()
+		{
+			SwinGame.CreateCircle (XLocation, YLocation, _radius);
+		}
 	}
 }
