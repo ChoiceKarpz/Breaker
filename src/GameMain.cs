@@ -7,9 +7,8 @@ namespace MyGame
     {
         public static void Main()
         {
-            //Open the game window
-            SwinGame.OpenGraphicsWindow("GameMain", 800, 600);
-            SwinGame.ShowSwinGameSplashScreen();
+			//Open the game window
+			SwinGame.OpenGraphicsWindow ("GameMain", 800, 600);
             
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
