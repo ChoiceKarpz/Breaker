@@ -29,7 +29,7 @@ namespace MyGame
 				XSpeed = Reflect (XSpeed);
 			if ((YLocation + _radius >= GameMain.ScreenHeight) || (YLocation - _radius <= 0))
 				YSpeed = Reflect (YSpeed);
-
+			//calculates if the ball makes contact with the paddle 
 			if (SwinGame.CircleRectCollision (SwinGame.CreateCircle (XLocation, YLocation, _radius), SwinGame.CreateRectangle (PlayingField.myPlayer.XLocation, PlayingField.myPlayer.YLocation, PlayingField.myPlayer.Width, PlayingField.myPlayer.Height)))
 				YSpeed = Reflect (YSpeed);                                                                                                   	
 			                                                                                                            
