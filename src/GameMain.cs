@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using SwinGameSDK;
 
 namespace MyGame
@@ -29,10 +30,16 @@ namespace MyGame
 				PlayingField.ProcessInput ();
 				PlayingField.ProcessMovement ();
 				PlayingField.CheckHealthOfField ();
+
+				if (PlayingField.CheckGameOver () == true)
+					break;
                 
                 //Draw onto the screen
                 SwinGame.RefreshScreen(60);
             }
+
+			PlayingField.DisplayGameOver ();
+			Thread.Sleep (5000);
         }
     }
 }

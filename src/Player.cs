@@ -4,7 +4,7 @@ namespace MyGame
 {
 	public class Player : MovableObject
 	{
-		private int _points;
+		private int _points = 0;
 		private int _width;
 		private int _height;
 

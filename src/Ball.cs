@@ -7,6 +7,7 @@ namespace MyGame
 	public class Ball : MovableObject
 	{
 		private int _radius;
+		private bool _offScreen = false;
 
 		public Ball (float x, float y, float xspeed, float yspeed, int radius) : base (x, y, xspeed, yspeed, Color.White)
 		{
@@ -17,6 +18,12 @@ namespace MyGame
 		{
 		}
 
+		public bool OffScreen {
+			get {
+				return _offScreen;
+			}
+		}
+
 		public override void Draw ()
 		{
 			SwinGame.FillCircle (Color, XLocation, YLocation, _radius);
@@ -25,8 +32,14 @@ namespace MyGame
 		//ball should check if it collides with any of the walls or paddles, and reflects appropriately 
 		public override void CheckCollision ()
 		{
+			//check if ball is off screen
+			if (XLocation + _radius > GameMain.ScreenWidth || XLocation - _radius < 0 || YLocation + _radius > GameMain.ScreenHeight || YLocation - _radius < 0)
+				_offScreen = true;
+
 			//check if the ball makes contact with any walls
 			foreach (Wall w in PlayingField.Walls) {
+
+
 				//check collision with left side of ball
 				if (SwinGame.PointInRect (XLocation - _radius, YLocation, w.XLocation, w.YLocation, w.Width, w.Height)) 
 					

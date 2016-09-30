@@ -141,6 +141,17 @@ namespace MyGame
 
 		}
 
+		public static bool CheckGameOver() {
+			return myBall.OffScreen;
+		}
+
+		public static void DisplayGameOver ()
+		{
+			SwinGame.ClearScreen (Color.Black);
+			SwinGame.DrawTextOnScreen ("Game Over! Points scored: " + myPlayer.Points, Color.White, 300, 300);
+			SwinGame.RefreshScreen ();
+		}
+
 
 	}
 }
