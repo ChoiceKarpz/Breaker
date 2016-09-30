@@ -31,6 +31,12 @@ namespace MyGame
 			}
 		}
 
+		public int Points {
+			get {
+				return _points;
+			}
+		}
+
 		public void AddToPoints (int i)
 		{
 			_points += i;

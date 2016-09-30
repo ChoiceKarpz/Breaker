@@ -36,6 +36,8 @@ namespace MyGame
 			foreach (Brick b in _Bricks) {
 				b.Draw ();
 			}
+
+			SwinGame.DrawTextOnScreen ("Score: " + myPlayer.Points, Color.White, GameMain.ScreenWidth - 150, GameMain.ScreenHeight - 20);
 		}
 
 		public static void ProcessMovement ()

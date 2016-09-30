@@ -7,6 +7,7 @@ namespace MyGame
 		private const int _Brickwidth = 100;
 		private const int _Brickheight = 20;
 		private const int _health = 2;
+		private int _points = 200;
 
 		public Brick (int x, int y) : base (x, y, _Brickwidth, _Brickheight, _health, Color.Red)
 		{
@@ -33,8 +34,10 @@ namespace MyGame
 
 		public override void CheckHealth ()
 		{
-			if (Health <= 0) 
+			if (Health <= 0) {
 				PlayingField.DeleteBrick (this);
+				PlayingField.myPlayer.AddToPoints (_points);
+			}
 		}
 	}
 }
