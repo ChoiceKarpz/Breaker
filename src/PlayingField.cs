@@ -6,7 +6,7 @@ namespace MyGame
 {
 	public static class PlayingField
 	{
-		//static List<Bricks> _Bricks = new List<Bricks>();
+		public static List<Brick> _Bricks = new List<Brick>();
 		public static List<Wall> _Walls = new List<Wall>();
 		public static Player myPlayer = new Player ();
 		public static Ball myBall = new Ball ();
@@ -14,6 +14,12 @@ namespace MyGame
 		public static List<Wall> Walls {
 			get {
 				return _Walls;
+			}
+		}
+
+		public static List<Brick> Bricks {
+			get {
+				return _Bricks;
 			}
 		}
 
@@ -25,6 +31,10 @@ namespace MyGame
 
 			foreach (Wall w in _Walls) {
 				w.Draw ();
+			}
+
+			foreach (Brick b in _Bricks) {
+				b.Draw ();
 			}
 		}
 
@@ -57,9 +67,25 @@ namespace MyGame
 		//	}
 		//}
 
-		//public static void GenerateBricks ()
-		//{
-		//}
+		public static void GenerateBricks ()
+		{
+			//1st row
+			for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
+				_Bricks.Add (new Brick (i, Wall.SideLength * 2));
+			}
+			//2nd row
+			for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
+				_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight));
+			}
+			//3rd row
+			for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
+				_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight * 2));
+			}
+			//4th row
+			for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
+				_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight * 3));
+			}
+		}
 
 		//public static void ShuffleBricks ()
 		//{
@@ -87,10 +113,16 @@ namespace MyGame
 			}
 		}
 
-		//public static void DeleteBrick (Brick b)
-		//{
-		//	Bricks.Remove (b);
-		//}
+
+		public static void DeleteBrick (Brick b)
+		{
+			List<Brick> NewBricks = new List<Brick> ();
+			foreach (Brick brick in Bricks) {
+				if (brick != b)
+					NewBricks.Add (brick);
+			}
+			_Bricks = NewBricks;
+		}
 
 		public static void DeleteWall (Wall w)
 		{

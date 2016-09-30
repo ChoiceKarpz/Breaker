@@ -11,6 +11,7 @@ namespace MyGame
         {
 			//get game ready
 			PlayingField.GenerateWalls ();
+			PlayingField.GenerateBricks ();
 			Console.WriteLine (PlayingField.Walls.Count);
 			
 			//Open the game window

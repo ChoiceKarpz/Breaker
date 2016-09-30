@@ -21,9 +21,8 @@ namespace MyGame
 
 		public override void CheckHealth ()
 		{
-			if (Health <= 0) {
+			if (Health <= 0) 
 				PlayingField.DeleteWall (this);
-			}
 				
 		}
 

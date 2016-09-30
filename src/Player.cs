@@ -8,12 +8,13 @@ namespace MyGame
 		private int _width;
 		private int _height;
 
-		public Player (float x, float y, float xspeed, float yspeed, int width, int height) : base (x, y, xspeed, yspeed, Color.Red)
+		public Player (float x, float y, float xspeed, float yspeed, int width, int height) : base (x, y, xspeed, yspeed, Color.LimeGreen)
 		{
 			_width = width;
 			_height = height;
 		}
 
+		//standard values for the game
 		public Player () : this (350, 580, 5, 0, 100, 10)
 		{
 		}
