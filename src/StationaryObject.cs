@@ -38,10 +38,13 @@ namespace MyGame
 		public void DecreaseHealth ()
 		{
 			_health--;
+			DecreaseBrightness ();
 		}
 
-		public void DescreaseBrightness ()
+		public void DecreaseBrightness ()
 		{
+			byte ColorTransperency = (byte)(SwinGame.TransparencyOf (Color) * (0.9));
+			Color = SwinGame.RGBAColor (SwinGame.RedOf (Color), SwinGame.GreenOf (Color), SwinGame.BlueOf(Color), ColorTransperency);
 		}
 	}
 }

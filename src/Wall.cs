@@ -6,7 +6,7 @@ namespace MyGame
 	public class Wall : StationaryObject
 	{
 		private const int _sideLength = 50;
-		private const int _health = 5;
+		private const int _health = 10;
 
 		public Wall (int x, int y) : base (x, y, _sideLength, _sideLength, _health, Color.Blue)
 		{
@@ -21,8 +21,10 @@ namespace MyGame
 
 		public override void CheckHealth ()
 		{
-			if (Health <= 0)
+			if (Health <= 0) {
 				PlayingField.DeleteWall (this);
+			}
+				
 		}
 
 		public static int SideLength {

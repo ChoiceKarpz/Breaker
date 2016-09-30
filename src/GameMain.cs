@@ -11,6 +11,7 @@ namespace MyGame
         {
 			//get game ready
 			PlayingField.GenerateWalls ();
+			Console.WriteLine (PlayingField.Walls.Count);
 			
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);
@@ -26,8 +27,7 @@ namespace MyGame
 				PlayingField.DrawField ();
 				PlayingField.ProcessInput ();
 				PlayingField.ProcessMovement ();
-
-                SwinGame.DrawFramerate(0,0);
+				PlayingField.CheckHealthOfField ();
                 
                 //Draw onto the screen
                 SwinGame.RefreshScreen(60);

@@ -7,7 +7,7 @@ namespace MyGame
 	public static class PlayingField
 	{
 		//static List<Bricks> _Bricks = new List<Bricks>();
-		static List<Wall> _Walls = new List<Wall>();
+		public static List<Wall> _Walls = new List<Wall>();
 		public static Player myPlayer = new Player ();
 		public static Ball myBall = new Ball ();
 
@@ -44,6 +44,13 @@ namespace MyGame
 				myPlayer.MoveLeft ();
 		}
 
+		public static void CheckHealthOfField ()
+		{
+			foreach (Wall w in Walls) {
+				w.CheckHealth ();
+			}
+		}
+
 		//public static int NumberOfBricks {
 		//	get {
 		//		return Bricks.Length();
@@ -65,13 +72,18 @@ namespace MyGame
 		public static void GenerateWalls ()
 		{
 			//generate walls accross the top row
-			for (int i = 0; i <= GameMain.ScreenWidth - Wall.SideLength; i = i + 50) {
+			for (int i = 0; i <= GameMain.ScreenWidth - Wall.SideLength; i = i + Wall.SideLength) {
 				_Walls.Add (new Wall (i, 0));
 			}
 
 			//generate walls down left column
-			for (int i = Wall.SideLength; i <= GameMain.ScreenHeight - Wall.SideLength; i = i + 50) {
+			for (int i = Wall.SideLength; i <= GameMain.ScreenHeight - Wall.SideLength; i = i + Wall.SideLength) {
 				_Walls.Add (new Wall (0, i));
+			}
+
+			//generate walls down right column
+			for (int i = Wall.SideLength; i <= GameMain.ScreenHeight - Wall.SideLength; i = i + Wall.SideLength) {
+				_Walls.Add (new Wall (GameMain.ScreenWidth - Wall.SideLength, i));
 			}
 		}
 
@@ -82,7 +94,13 @@ namespace MyGame
 
 		public static void DeleteWall (Wall w)
 		{
-			_Walls.Remove (w);
+			List<Wall> NewWalls = new List<Wall> ();
+			foreach (Wall wall in Walls) {
+				if (wall != w)
+					NewWalls.Add (wall);
+			}
+			_Walls = NewWalls;
+
 		}
 
 

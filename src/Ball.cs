@@ -25,14 +25,44 @@ namespace MyGame
 		//ball should check if it collides with any of the walls or paddles, and reflects appropriately 
 		public override void CheckCollision ()
 		{
-			//if ((XLocation + _radius >= GameMain.ScreenWidth) || (XLocation - _radius <= 0))
-			//	XSpeed = Reflect (XSpeed);
-			//if ((YLocation + _radius >= GameMain.ScreenHeight) || (YLocation - _radius <= 0))
-			//	YSpeed = Reflect (YSpeed);
+			if ((XLocation + _radius >= GameMain.ScreenWidth) || (XLocation - _radius <= 0))
+				XSpeed = Reflect (XSpeed);
+			if ((YLocation + _radius >= GameMain.ScreenHeight) || (YLocation - _radius <= 0))
+				YSpeed = Reflect (YSpeed);
 
 			foreach (Wall w in PlayingField.Walls) {
-				if (SwinGame.CircleRectCollision (SwinGame.CreateCircle (XLocation, YLocation, _radius), SwinGame.CreateRectangle (w.XLocation, w.YLocation, w.Width, w.Height))
-				    
+				//check collision with left side of ball
+				if (SwinGame.PointInRect (XLocation - _radius, YLocation, w.XLocation, w.YLocation, w.Width, w.Height)) 
+					
+				{
+					XLocation = _radius + w.XLocation + w.Width;
+					XSpeed = Reflect (XSpeed);
+					w.DecreaseHealth ();
+				}
+				//check collision with right side of ball
+				else if (SwinGame.PointInRect (XLocation + _radius, YLocation, w.XLocation, w.YLocation, w.Width, w.Height))
+					
+				{
+					XLocation = w.XLocation - _radius;
+					XSpeed = Reflect (XSpeed);
+					w.DecreaseHealth ();
+				}
+				//check collision with top side of ball
+				else if (SwinGame.PointInRect (XLocation, YLocation - _radius, w.XLocation, w.YLocation, w.Width, w.Height))
+					
+				{
+					YLocation = w.YLocation + w.Height + _radius;
+					YSpeed = Reflect (YSpeed);
+					w.DecreaseHealth ();
+				}
+				//check collision with bottom side of ball
+				else if (SwinGame.PointInRect (XLocation, YLocation + _radius, w.XLocation, w.YLocation, w.Width, w.Height))
+					
+				{
+					YLocation = w.YLocation - _radius;
+					YSpeed = Reflect (YSpeed);
+					w.DecreaseHealth ();
+				}
 			}
 			//calculates if the ball makes contact with the paddle 
 			if (SwinGame.CircleRectCollision (SwinGame.CreateCircle (XLocation, YLocation, _radius), SwinGame.CreateRectangle (PlayingField.myPlayer.XLocation, PlayingField.myPlayer.YLocation, PlayingField.myPlayer.Width, PlayingField.myPlayer.Height)))
