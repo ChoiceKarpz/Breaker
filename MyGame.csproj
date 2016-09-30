@@ -78,6 +78,9 @@
     <Compile Include="src\MovableObject.cs" />
     <Compile Include="src\Ball.cs" />
     <Compile Include="src\Player.cs" />
+    <Compile Include="src\StationaryObject.cs" />
+    <Compile Include="src\Wall.cs" />
+    <Compile Include="src\Brick.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

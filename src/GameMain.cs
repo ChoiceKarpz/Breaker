@@ -9,12 +9,16 @@ namespace MyGame
 		public static readonly int ScreenHeight = 600;
         public static void Main()
         {
+			//get game ready
+			PlayingField.GenerateWalls ();
+			PlayingField.GenerateBricks ();
+			Console.WriteLine (PlayingField.Walls.Count);
 			
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);
 
             //Run the game loop
-            while(false == SwinGame.WindowCloseRequested())
+			while(!SwinGame.WindowCloseRequested() && !SwinGame.KeyTyped(KeyCode.vk_ESCAPE))
             {
                 //Fetch the next batch of UI interaction
                 SwinGame.ProcessEvents();
@@ -24,8 +28,7 @@ namespace MyGame
 				PlayingField.DrawField ();
 				PlayingField.ProcessInput ();
 				PlayingField.ProcessMovement ();
-
-                SwinGame.DrawFramerate(0,0);
+				PlayingField.CheckHealthOfField ();
                 
                 //Draw onto the screen
                 SwinGame.RefreshScreen(60);
