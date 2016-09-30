@@ -59,6 +59,10 @@ namespace MyGame
 			foreach (Wall w in Walls) {
 				w.CheckHealth ();
 			}
+
+			foreach (Brick b in Bricks) {
+				b.CheckHealth ();
+			}
 		}
 
 		//public static int NumberOfBricks {
