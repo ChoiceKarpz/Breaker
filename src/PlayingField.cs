@@ -12,6 +12,8 @@ namespace MyGame
 		public static List<Wall> _Walls = new List<Wall>();
 		public static Player myPlayer = new Player ();
 		public static Ball myBall = new Ball ();
+		public static Color BrickColor = Color.Red;
+		public static Color BrickOutlineColor = Color.DarkRed;
 
 		public static List<Wall> Walls {
 			get {
@@ -23,6 +25,34 @@ namespace MyGame
 			get {
 				return _Bricks;
 			}
+		}
+
+		public static void LoadColors ()
+		{
+			if (File.Exists ("colors.json")) {
+				try {
+					List<float> ColorsForBricks = new List<float> ();
+					ColorsForBricks = JsonConvert.DeserializeObject<List<float>> (File.ReadAllText ("colors.json"));
+					BrickColor = SwinGame.RGBFloatColor(ColorsForBricks [0], ColorsForBricks [1], ColorsForBricks[2]);
+					BrickOutlineColor = SwinGame.RGBFloatColor (ColorsForBricks [3], ColorsForBricks [4], ColorsForBricks [5]);
+				} catch { SetColors (); }
+			} else {
+				SetColors ();
+			}
+		}
+
+		public static void SetColors ()
+		{
+			List<float> ColorsToSave = new List<float> ();
+			ColorsToSave.Add (BrickColor.R);
+			ColorsToSave.Add (BrickColor.G);
+			ColorsToSave.Add (BrickColor.B);
+			ColorsToSave.Add (BrickOutlineColor.R);
+			ColorsToSave.Add (BrickOutlineColor.G);
+			ColorsToSave.Add (BrickOutlineColor.B);
+
+			string ColorsToSaveText = JsonConvert.SerializeObject (ColorsToSave);
+			File.WriteAllText ("colors.json", ColorsToSaveText);
 		}
 
 
@@ -77,25 +107,48 @@ namespace MyGame
 
 		public static void GenerateBricks ()
 		{
-			//1st row
-			for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
-				_Bricks.Add (new Brick (i, Wall.SideLength * 2));
-			}
-			//2nd row
-			for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
-				_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight));
-			}
-			//3rd row
-			for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
-				_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight * 2));
-			}
-			//4th row
-			for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
-				_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight * 3));
-			}
+			//attempt to read brick locations from file 
+			//if (File.Exists ("level.json")) {
+			//	List<float []> BricksToAdd = new List<float []> ();
 
-			//File.WriteAllText ("Levels.txt", BricksToSave);
-		}
+			//	BricksToAdd = JsonConvert.DeserializeObject<List<float []>> (File.ReadAllText ("level.json"));
+
+
+			//	foreach (float [] data in BricksToAdd) 
+			//		_Bricks.Add (new Brick (data [0], data [1]));
+
+			//	Console.WriteLine ("File was read");
+			//}
+			////create if they don't exist
+			//else {
+
+				//1st row
+				for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
+					_Bricks.Add (new Brick (i, Wall.SideLength * 2));
+				}
+				//2nd row
+				for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
+					_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight));
+				}
+				//3rd row
+				for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
+					_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight * 2));
+				}
+				//4th row
+				for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
+					_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight * 3));
+				}
+
+				List<float []> Positions = new List<float []> ();
+				foreach (Brick b in Bricks) {
+					Positions.Add (new float [] { b.XLocation, b.YLocation });
+				}
+
+				//string BricksToSave = JsonConvert.SerializeObject (Positions);
+				//File.WriteAllText ("level.json", BricksToSave);
+			}
+		//}
+
 
 		//public static void ShuffleBricks ()
 		//{

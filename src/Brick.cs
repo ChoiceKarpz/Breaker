@@ -9,7 +9,7 @@ namespace MyGame
 		private const int _health = 2;
 		private int _points = 200;
 
-		public Brick (int x, int y) : base (x, y, _Brickwidth, _Brickheight, _health, Color.Red)
+		public Brick (float x, float y) : base (x, y, _Brickwidth, _Brickheight, _health, PlayingField.BrickColor, PlayingField.BrickOutlineColor)
 		{
 		}
 
@@ -29,7 +29,7 @@ namespace MyGame
 		{
 			//draw a dark green outline
 			SwinGame.FillRectangle (Color, XLocation, YLocation, Width, Height);
-			SwinGame.DrawRectangle (Color.DarkRed, XLocation, YLocation, Width, Height);
+			SwinGame.DrawRectangle (OutlineColor, XLocation, YLocation, Width, Height);
 		}
 
 		public override void CheckHealth ()

@@ -11,9 +11,9 @@ namespace MyGame
         public static void Main()
         {
 			//get game ready
+			//PlayingField.LoadColors ();
 			PlayingField.GenerateWalls ();
 			PlayingField.GenerateBricks ();
-			var BricksToSave = JsonConvert.SerializeObject (PlayingField.Bricks);
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);
 

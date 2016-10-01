@@ -7,12 +7,14 @@ namespace MyGame
 		private int _width;
 		private int _height;
 		private int _health;
+		private Color _outlineColor;
 
-		public StationaryObject (float x, float y, int width, int height, int health, Color c) : base (x, y, c)
+		public StationaryObject (float x, float y, int width, int height, int health, Color inside, Color outline) : base (x, y, inside)
 		{
 			_width = width;
 			_height = height;
 			_health = health;
+			_outlineColor = outline;
 		}
 
 		public int Width {
@@ -24,6 +26,12 @@ namespace MyGame
 		public int Height {
 			get {
 				return _height;
+			}
+		}
+
+		public Color OutlineColor {
+			get {
+				return _outlineColor;
 			}
 		}
 

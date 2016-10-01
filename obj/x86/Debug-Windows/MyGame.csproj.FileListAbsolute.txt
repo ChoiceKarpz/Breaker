@@ -30,3 +30,35 @@ C:\Users\campb\OneDrive\Documents\Uni\Year 1 Semester 2\Object Oriented Programm
 C:\Users\campb\OneDrive\Documents\Uni\Year 1 Semester 2\Object Oriented Programming\Distinction\Breaker\obj\x86\Debug-Windows\MyGame.exe
 C:\Users\campb\OneDrive\Documents\Uni\Year 1 Semester 2\Object Oriented Programming\Distinction\Breaker\bin\Debug\Newtonsoft.Json.dll
 C:\Users\campb\OneDrive\Documents\Uni\Year 1 Semester 2\Object Oriented Programming\Distinction\Breaker\bin\Debug\Newtonsoft.Json.xml
+C:\Users\campb\Desktop\Breaker\obj\x86\Debug-Windows\MyGame.csprojResolveAssemblyReference.cache
+C:\Users\campb\Desktop\Breaker\obj\x86\Debug-Windows\MyGame.exe
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\animations\startup.txt
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\bundles\FileDialog.txt
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\bundles\splash.txt
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\fonts\arial.ttf
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\fonts\cour.ttf
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\fonts\maven_pro_regular.ttf
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\images\fdFile.png
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\images\fdFolder.png
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\images\FileDialog_Active.png
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\images\FileDialog_Background.png
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\images\FileDialog_Inactive.png
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\images\FileDialog_Scroll.png
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\images\FileDialog_ScrollSmall.png
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\images\Swinburne.jpg
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\images\SwinGameAni.png
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\panels\FileDialog.txt
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\sounds\error.wav
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\sounds\SwinGameStart.wav
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\SwinGame.icns
+C:\Users\campb\Desktop\Breaker\bin\Debug\Resources\SwinGame.ico
+C:\Users\campb\Desktop\Breaker\bin\Debug\MyGame.exe
+C:\Users\campb\Desktop\Breaker\bin\Debug\mscorlib.dll
+C:\Users\campb\Desktop\Breaker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\campb\Desktop\Breaker\bin\Debug\SwinGame.dll
+C:\Users\campb\Desktop\Breaker\bin\Debug\Newtonsoft.Json.xml
+C:\Users\campb\Desktop\Breaker\bin\Debug\normidna.nlp
+C:\Users\campb\Desktop\Breaker\bin\Debug\normnfc.nlp
+C:\Users\campb\Desktop\Breaker\bin\Debug\normnfd.nlp
+C:\Users\campb\Desktop\Breaker\bin\Debug\normnfkc.nlp
+C:\Users\campb\Desktop\Breaker\bin\Debug\normnfkd.nlp

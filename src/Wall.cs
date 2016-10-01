@@ -8,14 +8,14 @@ namespace MyGame
 		private const int _sideLength = 50;
 		private const int _health = 10;
 
-		public Wall (int x, int y) : base (x, y, _sideLength, _sideLength, _health, Color.Blue)
+		public Wall (int x, int y) : base (x, y, _sideLength, _sideLength, _health, Color.Blue, Color.White)
 		{
 		}
 
 		public override void Draw ()
 		{
 			//Draw outline so that each is clearly defined
-			SwinGame.DrawRectangle (Color.White, XLocation, YLocation, _sideLength, _sideLength);
+			SwinGame.DrawRectangle (OutlineColor, XLocation, YLocation, _sideLength, _sideLength);
 			SwinGame.FillRectangle (Color, XLocation, YLocation, _sideLength - 1, _sideLength - 1);
 		}
 
