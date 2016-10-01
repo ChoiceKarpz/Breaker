@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 using SwinGameSDK;
-
+using Newtonsoft.Json;
 namespace MyGame
 {
     public class GameMain
@@ -13,8 +13,7 @@ namespace MyGame
 			//get game ready
 			PlayingField.GenerateWalls ();
 			PlayingField.GenerateBricks ();
-			Console.WriteLine (PlayingField.Walls.Count);
-			
+			var BricksToSave = JsonConvert.SerializeObject (PlayingField.Bricks);
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);
 

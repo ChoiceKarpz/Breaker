@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using SwinGameSDK;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace MyGame
 {
@@ -91,6 +93,8 @@ namespace MyGame
 			for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
 				_Bricks.Add (new Brick (i, Wall.SideLength * 2 + Brick.BrickHeight * 3));
 			}
+
+			//File.WriteAllText ("Levels.txt", BricksToSave);
 		}
 
 		//public static void ShuffleBricks ()
