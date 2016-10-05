@@ -10,12 +10,18 @@ namespace MyGame
 		public static readonly int ScreenHeight = 600;
         public static void Main()
         {
-			//get game ready
-			//PlayingField.LoadColors ();
-			PlayingField.GenerateWalls ();
-			PlayingField.GenerateBricks ();
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);
+			//get game ready
+			SwinGame.ClearScreen (Color.Black);
+			PlayingField.DrawField ();
+			SwinGame.RefreshScreen ();
+			PlayingField.LoadColors ();
+			//make game objects
+			PlayingField.GenerateWalls ();
+			PlayingField.GenerateBricks ();
+
+
 
             //Run the game loop
 			while(!SwinGame.WindowCloseRequested() && !SwinGame.KeyTyped(KeyCode.vk_ESCAPE))

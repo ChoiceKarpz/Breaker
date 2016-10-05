@@ -51,7 +51,7 @@ namespace MyGame
 
 		public void DecreaseBrightness ()
 		{
-			byte ColorTransperency = (byte)(SwinGame.TransparencyOf (Color) * (0.9));
+			byte ColorTransperency = (byte)(SwinGame.TransparencyOf (Color) * (0.61));
 			Color = SwinGame.RGBAColor (SwinGame.RedOf (Color), SwinGame.GreenOf (Color), SwinGame.BlueOf(Color), ColorTransperency);
 		}
 	}

@@ -31,10 +31,11 @@ namespace MyGame
 		{
 			if (File.Exists ("colors.json")) {
 				try {
-					List<float> ColorsForBricks = new List<float> ();
-					ColorsForBricks = JsonConvert.DeserializeObject<List<float>> (File.ReadAllText ("colors.json"));
-					BrickColor = SwinGame.RGBFloatColor(ColorsForBricks [0], ColorsForBricks [1], ColorsForBricks[2]);
-					BrickOutlineColor = SwinGame.RGBFloatColor (ColorsForBricks [3], ColorsForBricks [4], ColorsForBricks [5]);
+					List<string> ColorsForBricks = new List<string> ();
+					ColorsForBricks = JsonConvert.DeserializeObject<List<string>> (File.ReadAllText ("colors.json"));
+					BrickColor = SwinGame.RGBColor(Convert.ToByte(ColorsForBricks[0]), Convert.ToByte(ColorsForBricks [1]), Convert.ToByte(ColorsForBricks[2]));
+					Console.WriteLine (Convert.ToString (BrickColor.R));
+					BrickOutlineColor = SwinGame.RGBColor (Convert.ToByte(ColorsForBricks [3]), Convert.ToByte(ColorsForBricks [4]), Convert.ToByte(ColorsForBricks [5]));
 				} catch { SetColors (); }
 			} else {
 				SetColors ();
@@ -43,13 +44,14 @@ namespace MyGame
 
 		public static void SetColors ()
 		{
-			List<float> ColorsToSave = new List<float> ();
-			ColorsToSave.Add (BrickColor.R);
-			ColorsToSave.Add (BrickColor.G);
-			ColorsToSave.Add (BrickColor.B);
-			ColorsToSave.Add (BrickOutlineColor.R);
-			ColorsToSave.Add (BrickOutlineColor.G);
-			ColorsToSave.Add (BrickOutlineColor.B);
+			Console.WriteLine ("Setting Colors");
+			List<string> ColorsToSave = new List<string> ();
+			ColorsToSave.Add (Convert.ToString(BrickColor.R));
+			ColorsToSave.Add (Convert.ToString(BrickColor.G));
+			ColorsToSave.Add (Convert.ToString(BrickColor.B));
+			ColorsToSave.Add (Convert.ToString (BrickOutlineColor.R));
+			ColorsToSave.Add (Convert.ToString (BrickOutlineColor.G));
+			ColorsToSave.Add (Convert.ToString (BrickOutlineColor.B));
 
 			string ColorsToSaveText = JsonConvert.SerializeObject (ColorsToSave);
 			File.WriteAllText ("colors.json", ColorsToSaveText);
