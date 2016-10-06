@@ -8,6 +8,7 @@ namespace MyGame
 	{
 		private int _radius;
 		private bool _offScreen = false;
+		private const float _constXSpeed = 3;
 
 		public Ball (float x, float y, float xspeed, float yspeed, int radius) : base (x, y, xspeed, yspeed, Color.White)
 		{
@@ -102,8 +103,16 @@ namespace MyGame
 
 
 			//calculates if the ball makes contact with the paddle 
-			if (SwinGame.CircleRectCollision (SwinGame.CreateCircle (XLocation, YLocation, _radius), SwinGame.CreateRectangle (PlayingField.myPlayer.XLocation, PlayingField.myPlayer.YLocation, PlayingField.myPlayer.Width, PlayingField.myPlayer.Height)))
-				YSpeed = Reflect (YSpeed);                                                                                                   	
+			if (SwinGame.PointInRect (XLocation, YLocation + _radius, PlayingField.myPlayer.XLocation, PlayingField.myPlayer.YLocation, PlayingField.myPlayer.Width, PlayingField.myPlayer.Height)) {
+				YSpeed = Reflect (YSpeed);
+				//XSpeed = _constXSpeed * ((PlayingField.myBall.XLocation - (PlayingField.myPlayer.XLocation + PlayingField.myPlayer.Width / 2)) * (1 / 100) + (float) 0.5);
+				if (SwinGame.KeyDown (KeyCode.vk_RIGHT))
+					XSpeed++;
+				else if (SwinGame.KeyDown (KeyCode.vk_LEFT))
+					XSpeed--;
+				    
+			}
+	                                                                                                   	
 			                                                                                                            
 		
 		}

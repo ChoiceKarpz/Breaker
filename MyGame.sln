@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame", "MyGame.csproj", "{871B5A90-103A-46A5-BBB9-07C02B9851D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breaker", "Breaker.csproj", "{871B5A90-103A-46A5-BBB9-07C02B9851D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

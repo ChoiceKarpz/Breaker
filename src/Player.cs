@@ -15,7 +15,7 @@ namespace MyGame
 		}
 
 		//standard values for the game
-		public Player () : this (350, 580, 5, 0, 100, 10)
+		public Player () : this (350, 580, 5, 0, 150, 10)
 		{
 		}
 
