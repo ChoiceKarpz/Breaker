@@ -37,7 +37,7 @@ namespace MyGame
 			YLocation += YSpeed;
 		}
 
-		public abstract void Reset ();
+		//public abstract void Reset ();
 
 		public abstract void CheckCollision ();
 

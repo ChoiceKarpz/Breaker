@@ -81,6 +81,9 @@
     <Compile Include="src\StationaryObject.cs" />
     <Compile Include="src\Wall.cs" />
     <Compile Include="src\Brick.cs" />
+    <Compile Include="src\PowerUp.cs" />
+    <Compile Include="src\EnlargenPowerUp.cs" />
+    <Compile Include="src\SpeedUpPowerUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

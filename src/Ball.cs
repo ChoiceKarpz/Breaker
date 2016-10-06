@@ -117,15 +117,15 @@ namespace MyGame
 		
 		}
 
-		public override void Reset ()
-		{
-			XLocation = 400;
-			YLocation = 300;
-			XSpeed = 20;
-			YSpeed = 20;
-			Color = Color.White;
+		//public override void Reset ()
+		//{
+		//	XLocation = 400;
+		//	YLocation = 300;
+		//	XSpeed = 20;
+		//	YSpeed = 20;
+		//	Color = Color.White;
 
-		}
+		//}
 
 		public float Reflect (float n)
 		{

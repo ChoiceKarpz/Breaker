@@ -42,10 +42,10 @@ namespace MyGame
 			_points += i;
 		}
 
-		public override void Reset ()
-		{
-			throw new NotImplementedException ();
-		}
+		//public override void Reset ()
+		//{
+		//	throw new NotImplementedException ();
+		//}
 
 		public override void Draw ()
 		{
