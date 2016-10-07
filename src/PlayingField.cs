@@ -10,6 +10,7 @@ namespace MyGame
 	{
 		public static List<Brick> _Bricks = new List<Brick>();
 		public static List<Wall> _Walls = new List<Wall>();
+		public static List<PowerUp> _ActivePowerUps = new List<PowerUp> ();
 		public static Player myPlayer = new Player ();
 		public static Ball myBall = new Ball ();
 		public static Color BrickColor = Color.Red;
@@ -71,6 +72,10 @@ namespace MyGame
 				b.Draw ();
 			}
 
+			foreach (PowerUp p in _ActivePowerUps) {
+				p.Draw ();
+			}
+
 			SwinGame.DrawTextOnScreen ("Score: " + myPlayer.Points, Color.White, GameMain.ScreenWidth - 150, GameMain.ScreenHeight - 20);
 		}
 
@@ -79,6 +84,11 @@ namespace MyGame
 			myBall.Move ();
 			myBall.CheckCollision ();
 			myPlayer.CheckCollision ();
+
+			foreach (PowerUp p in _ActivePowerUps) {
+				p.Move ();
+				p.CheckCollision ();
+			}
 		}
 
 		public static void ProcessInput ()
@@ -209,6 +219,26 @@ namespace MyGame
 			SwinGame.ClearScreen (Color.Black);
 			SwinGame.DrawTextOnScreen ("Game Over! Points scored: " + myPlayer.Points, Color.White, 300, 300);
 			SwinGame.RefreshScreen ();
+		}
+
+		public static void CreatePowerUp (float x, float y)
+		{
+			Random random = new Random ();
+			int i = random.Next (1, 101);
+			if (i >= 1 && i <= 50)
+				_ActivePowerUps.Add (new EnlargenPowerUp (x, y));
+			else
+				_ActivePowerUps.Add (new SpeedUpPowerUp (x, y));
+		}
+
+		public static void DeletePowerUp (PowerUp powerUp)
+		{
+			List<PowerUp> NewPowerUps = new List<PowerUp> ();
+			foreach (PowerUp p in _ActivePowerUps) {
+				if (p != powerUp)
+					NewPowerUps.Add (p);
+			}
+			_ActivePowerUps = NewPowerUps;
 		}
 
 

@@ -8,19 +8,9 @@ namespace MyGame
 		{
 		}
 
-		public override void Draw ()
-		{
-			throw new NotImplementedException ();
-		}
-
 		public override void Activate ()
 		{
-			throw new NotImplementedException ();
-		}
-
-		public override void CheckCollision ()
-		{
-			throw new NotImplementedException ();
+			PlayingField.myPlayer.IncreaseSpeed ();
 		}
 	}
 }

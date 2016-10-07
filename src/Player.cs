@@ -79,5 +79,15 @@ namespace MyGame
 		{
 			XLocation -= XSpeed;
 		}
+
+		public void IncreaseWidth ()
+		{
+			_width += 5;
+		}
+
+		public void IncreaseSpeed ()
+		{
+			XSpeed += 3;
+		}
 	}
 }

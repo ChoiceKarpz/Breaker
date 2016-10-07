@@ -37,6 +37,13 @@ namespace MyGame
 			if (Health <= 0) {
 				PlayingField.DeleteBrick (this);
 				PlayingField.myPlayer.AddToPoints (_points);
+
+				Random random = new Random ();
+				int i = random.Next (1, 101);
+
+				//25% chance of creating a powerup upon death 
+				if (i >= 0 && i <= 25)
+					PlayingField.CreatePowerUp (XLocation + (Width / 2), YLocation + Height);
 			}
 		}
 	}
