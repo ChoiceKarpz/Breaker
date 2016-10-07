@@ -12,17 +12,12 @@ namespace MyGame
         {
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);
-			//get game ready
-			//SwinGame.ClearScreen (Color.Black);
-			//PlayingField.DrawField ();
-			//SwinGame.RefreshScreen ();
+			//attempt to load colours from a JSON file
 			PlayingField.LoadColors ();
 			//make game objects
 			PlayingField.GenerateWalls ();
 			PlayingField.GenerateBricks ();
-			SwinGame.ClearScreen (Color.Black);
 			PlayingField.DrawField ();
-			SwinGame.RefreshScreen (60);
 			Thread.Sleep (3000);
 
 
@@ -35,7 +30,7 @@ namespace MyGame
                 SwinGame.ProcessEvents();
 
 				//Clear the screen and draw the framerate
-				SwinGame.ClearScreen (Color.Black);
+
 				PlayingField.DrawField ();
 				PlayingField.ProcessInput ();
 				PlayingField.ProcessMovement ();
@@ -43,9 +38,10 @@ namespace MyGame
 
 				if (PlayingField.CheckGameOver () == true)
 					break;
-                
-                //Draw onto the screen
-                SwinGame.RefreshScreen(60);
+
+				if (PlayingField.NumberOfBricks <= 0)
+					PlayingField.ResetBricks ();
+               
             }
 
 			PlayingField.DisplayGameOver ();

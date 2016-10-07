@@ -66,6 +66,8 @@ namespace MyGame
 
 		public static void DrawField ()
 		{
+			SwinGame.ClearScreen (Color.Black);
+
 			myBall.Draw ();
 			myPlayer.Draw ();
 
@@ -82,6 +84,7 @@ namespace MyGame
 			}
 
 			SwinGame.DrawTextOnScreen ("Score: " + myPlayer.Points, Color.White, GameMain.ScreenWidth - 150, GameMain.ScreenHeight - 20);
+			SwinGame.RefreshScreen (60);
 		}
 
 		public static void ProcessMovement ()
@@ -116,29 +119,14 @@ namespace MyGame
 			}
 		}
 
-		//public static int NumberOfBricks {
-		//	get {
-		//		return Bricks.Length();
-		//	}
-		//}
+		public static int NumberOfBricks {
+			get {
+				return Bricks.Count;
+			}
+		}
 
 		public static void GenerateBricks ()
 		{
-			//attempt to read brick locations from file 
-			//if (File.Exists ("level.json")) {
-			//	List<float []> BricksToAdd = new List<float []> ();
-
-			//	BricksToAdd = JsonConvert.DeserializeObject<List<float []>> (File.ReadAllText ("level.json"));
-
-
-			//	foreach (float [] data in BricksToAdd) 
-			//		_Bricks.Add (new Brick (data [0], data [1]));
-
-			//	Console.WriteLine ("File was read");
-			//}
-			////create if they don't exist
-			//else {
-
 				//1st row
 				for (int i = Wall.SideLength * 2; i <= GameMain.ScreenWidth - Wall.SideLength * 2 - Brick.BrickWidth; i = i + Brick.BrickWidth) {
 					_Bricks.Add (new Brick (i, Wall.SideLength * 2));
@@ -160,20 +148,10 @@ namespace MyGame
 				foreach (Brick b in Bricks) {
 					Positions.Add (new float [] { b.XLocation, b.YLocation });
 				}
-
-				//string BricksToSave = JsonConvert.SerializeObject (Positions);
-				//File.WriteAllText ("level.json", BricksToSave);
 			}
-		//}
 
 
-		//public static void ShuffleBricks ()
-		//{
-		//}
 
-		//public static void SetBrickLocations ()
-		//{
-		//}
 
 		public static void GenerateWalls ()
 		{
@@ -246,6 +224,14 @@ namespace MyGame
 			_ActivePowerUps = NewPowerUps;
 		}
 
+		public static void ResetBricks ()
+		{
+			_Bricks.Clear ();
+			GenerateBricks ();
+			myBall.ResetLocation ();
+			DrawField ();
+
+		}
 
 	}
 }
