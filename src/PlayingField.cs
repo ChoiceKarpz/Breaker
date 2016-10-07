@@ -14,7 +14,7 @@ namespace MyGame
 		public static Player myPlayer = new Player ();
 
 		public static Random myRandom = new Random ();
-		private static float randomXDirection = myRandom.Next (-3, 3);
+		private static float randomXDirection = myRandom.Next (-3, 4);
 		public static Ball myBall = new Ball (randomXDirection);
 
 
@@ -207,8 +207,8 @@ namespace MyGame
 		public static void CreatePowerUp (float x, float y)
 		{
 			Random random = new Random ();
-			int i = random.Next (1, 101);
-			if (i >= 1 && i <= 50)
+			int i = random.Next (1, 3);
+			if (i == 1)
 				_ActivePowerUps.Add (new EnlargenPowerUp (x, y));
 			else
 				_ActivePowerUps.Add (new SpeedUpPowerUp (x, y));
