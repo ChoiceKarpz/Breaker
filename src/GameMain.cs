@@ -13,13 +13,18 @@ namespace MyGame
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("Breaker", ScreenWidth, ScreenHeight);
 			//get game ready
-			SwinGame.ClearScreen (Color.Black);
-			PlayingField.DrawField ();
-			SwinGame.RefreshScreen ();
+			//SwinGame.ClearScreen (Color.Black);
+			//PlayingField.DrawField ();
+			//SwinGame.RefreshScreen ();
 			PlayingField.LoadColors ();
 			//make game objects
 			PlayingField.GenerateWalls ();
 			PlayingField.GenerateBricks ();
+			SwinGame.ClearScreen (Color.Black);
+			PlayingField.DrawField ();
+			SwinGame.RefreshScreen (60);
+			Thread.Sleep (3000);
+
 
 
 

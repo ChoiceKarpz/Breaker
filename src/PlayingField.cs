@@ -12,7 +12,12 @@ namespace MyGame
 		public static List<Wall> _Walls = new List<Wall>();
 		public static List<PowerUp> _ActivePowerUps = new List<PowerUp> ();
 		public static Player myPlayer = new Player ();
-		public static Ball myBall = new Ball ();
+
+		public static Random myRandom = new Random ();
+		private static float randomXDirection = myRandom.Next (-3, 3);
+		public static Ball myBall = new Ball (randomXDirection);
+
+
 		public static Color BrickColor = Color.Red;
 		public static Color BrickOutlineColor = Color.DarkRed;
 

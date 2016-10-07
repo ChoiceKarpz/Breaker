@@ -6,18 +6,13 @@ namespace MyGame
 
 	public class Ball : MovableObject
 	{
-		private int _radius;
+		private const int _radius = 10;
 		private bool _offScreen = false;
-		private const float _constXSpeed = 3;
 
-		public Ball (float x, float y, float xspeed, float yspeed, int radius) : base (x, y, xspeed, yspeed, Color.White)
-		{
-			_radius = radius;
-		}
-
-		public Ball () : this (400, 300, 3, 5, 10)
+		public Ball (float xspeed) : base (400, 300, xspeed, 5, Color.White)
 		{
 		}
+
 
 		public bool OffScreen {
 			get {
