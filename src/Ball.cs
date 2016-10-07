@@ -122,5 +122,10 @@ namespace MyGame
 		{
 			return n * -1;
 		}
+
+		public void IncreaseSpeed ()
+		{
+			YSpeed += 1;
+		}
 	}
 }
