@@ -127,5 +127,11 @@ namespace MyGame
 		{
 			YSpeed += 1;
 		}
+
+		public void DecreaseSpeed ()
+		{
+			YSpeed -= 1;
+		}
+
 	}
 }

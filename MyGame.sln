@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breaker", "Breaker.csproj", "{871B5A90-103A-46A5-BBB9-07C02B9851D1}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BreakerInstaller", "..\Setup1\Setup1.vdproj", "{302B83B6-0944-4C18-B46A-523BD821DA97}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -26,11 +24,6 @@ Global
 		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Debug-Windows|x86.Build.0 = Debug-Windows|x86
 		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Release|x86.ActiveCfg = Debug-Windows|x86
 		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Release|x86.Build.0 = Debug-Windows|x86
-		{302B83B6-0944-4C18-B46A-523BD821DA97}.Debug|x86.ActiveCfg = Debug
-		{302B83B6-0944-4C18-B46A-523BD821DA97}.Debug-Mac|x86.ActiveCfg = Debug
-		{302B83B6-0944-4C18-B46A-523BD821DA97}.Debug-Unix|x86.ActiveCfg = Debug
-		{302B83B6-0944-4C18-B46A-523BD821DA97}.Debug-Windows|x86.ActiveCfg = Debug
-		{302B83B6-0944-4C18-B46A-523BD821DA97}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

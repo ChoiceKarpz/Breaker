@@ -84,6 +84,7 @@
     <Compile Include="src\PowerUp.cs" />
     <Compile Include="src\EnlargenPowerUp.cs" />
     <Compile Include="src\SpeedUpPowerUp.cs" />
+    <Compile Include="src\SlowBallPowerUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

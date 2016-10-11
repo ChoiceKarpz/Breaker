@@ -206,12 +206,15 @@ namespace MyGame
 
 		public static void CreatePowerUp (float x, float y)
 		{
+			//produce a powerup, with a 1/3 chance of creating each type of powerup 
 			Random random = new Random ();
-			int i = random.Next (1, 101);
-			if (i >= 1 && i <= 50)
+			int i = random.Next (1, 301);
+			if (i >= 1 && i <= 100)
 				_ActivePowerUps.Add (new EnlargenPowerUp (x, y));
-			else
+			else if (i >= 101 && i <= 200)
 				_ActivePowerUps.Add (new SpeedUpPowerUp (x, y));
+			else
+				_ActivePowerUps.Add (new SlowBallPowerUp (x, y));
 		}
 
 		public static void DeletePowerUp (PowerUp powerUp)
