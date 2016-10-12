@@ -18,7 +18,7 @@ namespace MyGame
 			PlayingField.GenerateWalls ();
 			PlayingField.GenerateBricks ();
 			PlayingField.DrawField ();
-			Thread.Sleep (15000);
+			Thread.Sleep (5000);
 
 
 
