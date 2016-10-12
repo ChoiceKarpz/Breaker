@@ -108,7 +108,6 @@ namespace MyGame
 				    
 			}
 	                                                                                                   	
-			                                                                                                            
 		
 		}
 
@@ -130,7 +129,21 @@ namespace MyGame
 
 		public void DecreaseSpeed ()
 		{
-			YSpeed -= 1;
+			float oldSpeed = YSpeed;
+
+			if (YSpeed > 0)
+				YSpeed -= 1;
+			else if (YSpeed < 0)
+				YSpeed += 1;
+
+			if ((int) YSpeed  == 0) {
+				if (oldSpeed < 0)
+					YSpeed = -1;
+				if (oldSpeed > 0)
+					YSpeed = 1;
+				}
+
+
 		}
 
 	}

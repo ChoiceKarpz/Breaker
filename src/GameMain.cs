@@ -39,9 +39,14 @@ namespace MyGame
 				if (PlayingField.CheckGameOver () == true)
 					break;
 
-				if (PlayingField.NumberOfBricks <= 0)
+				if (PlayingField.NumberOfBricks <= 0) {
 					PlayingField.ResetBricks ();
-               
+					PlayingField.myBall.ResetLocation ();
+					PlayingField.DisplayResetBricksScreen ();
+					Thread.Sleep (3000);
+					PlayingField.DrawField ();
+					Thread.Sleep (2000);
+				}
             }
 
 			PlayingField.DisplayGameOver ();

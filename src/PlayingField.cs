@@ -21,6 +21,8 @@ namespace MyGame
 		public static Color BrickColor = Color.Red;
 		public static Color BrickOutlineColor = Color.DarkRed;
 
+		public static Random random = new Random ();
+
 		public static List<Wall> Walls {
 			get {
 				return _Walls;
@@ -40,7 +42,6 @@ namespace MyGame
 					List<string> ColorsForBricks = new List<string> ();
 					ColorsForBricks = JsonConvert.DeserializeObject<List<string>> (File.ReadAllText ("colors.json"));
 					BrickColor = SwinGame.RGBColor(Convert.ToByte(ColorsForBricks[0]), Convert.ToByte(ColorsForBricks [1]), Convert.ToByte(ColorsForBricks[2]));
-					Console.WriteLine (Convert.ToString (BrickColor.R));
 					BrickOutlineColor = SwinGame.RGBColor (Convert.ToByte(ColorsForBricks [3]), Convert.ToByte(ColorsForBricks [4]), Convert.ToByte(ColorsForBricks [5]));
 				} catch { SetColors (); }
 			} else {
@@ -63,6 +64,12 @@ namespace MyGame
 			File.WriteAllText ("colors.json", ColorsToSaveText);
 		}
 
+		public static void DisplayResetBricksScreen ()
+		{
+			SwinGame.ClearScreen (Color.Black);
+			SwinGame.DrawTextOnScreen ("Loading New Level....", Color.White, 300, 300);
+			SwinGame.RefreshScreen ();
+		}
 
 		public static void DrawField ()
 		{
@@ -207,8 +214,8 @@ namespace MyGame
 		public static void CreatePowerUp (float x, float y)
 		{
 			//produce a powerup, with a 1/3 chance of creating each type of powerup 
-			Random random = new Random ();
 			int i = random.Next (1, 301);
+			Console.WriteLine (i);
 			if (i >= 1 && i <= 100)
 				_ActivePowerUps.Add (new EnlargenPowerUp (x, y));
 			else if (i >= 101 && i <= 200)
@@ -231,7 +238,6 @@ namespace MyGame
 		{
 			_Bricks.Clear ();
 			GenerateBricks ();
-			myBall.ResetLocation ();
 			DrawField ();
 
 		}
