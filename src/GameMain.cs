@@ -18,7 +18,7 @@ namespace MyGame
 			PlayingField.GenerateWalls ();
 			PlayingField.GenerateBricks ();
 			PlayingField.DrawField ();
-			Thread.Sleep (3000);
+			Thread.Sleep (15000);
 
 
 
@@ -42,6 +42,7 @@ namespace MyGame
 				if (PlayingField.NumberOfBricks <= 0) {
 					PlayingField.ResetBricks ();
 					PlayingField.myBall.ResetLocation ();
+					PlayingField.myBall.IncreaseSpeed ();
 					PlayingField.DisplayResetBricksScreen ();
 					Thread.Sleep (3000);
 					PlayingField.DrawField ();
