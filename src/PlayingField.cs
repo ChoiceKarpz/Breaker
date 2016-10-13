@@ -14,7 +14,7 @@ namespace MyGame
 		public static Player myPlayer = new Player ();
 
 		public static Random myRandom = new Random ();
-		private static float randomXDirection = myRandom.Next (-3, 4);
+		private static float randomXDirection = myRandom.Next (0);
 		public static Ball myBall = new Ball (randomXDirection);
 
 

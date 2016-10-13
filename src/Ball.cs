@@ -126,6 +126,7 @@ namespace MyGame
 		{
 			XLocation = 400;
 			YLocation = 300;
+			XSpeed = 0;
 		}
 
 		public float Reflect (float n)
