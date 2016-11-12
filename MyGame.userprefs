@@ -5,21 +5,20 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\Ball.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameObject.cs">
     <Files>
-      <File FileName="src\GameMain.cs" Line="21" Column="22" />
-      <File FileName="src\PlayingField.cs" Line="70" Column="54" />
-      <File FileName="src\GameObject.cs" Line="38" Column="5" />
-      <File FileName="src\MovableObject.cs" Line="40" Column="42" />
-      <File FileName="src\PowerUp.cs" Line="12" Column="1" />
-      <File FileName="src\Player.cs" Line="83" Column="10" />
-      <File FileName="src\StationaryObject.cs" Line="54" Column="76" />
-      <File FileName="src\Wall.cs" Line="18" Column="40" />
-      <File FileName="src\Ball.cs" Line="136" Column="9" />
-      <File FileName="src\Brick.cs" Line="37" Column="22" />
-      <File FileName="src\EnlargenPowerUp.cs" Line="5" Column="15" />
-      <File FileName="src\SpeedUpPowerUp.cs" Line="8" Column="4" />
-      <File FileName="src\SlowBallPowerUp.cs" Line="13" Column="41" />
+      <File FileName="src\GameMain.cs" Line="50" Column="39" />
+      <File FileName="src\GameObject.cs" Line="33" Column="13" />
+      <File FileName="src\MovableObject.cs" Line="35" Column="4" />
+      <File FileName="src\Player.cs" Line="81" Column="4" />
+      <File FileName="src\StationaryObject.cs" Line="52" Column="30" />
+      <File FileName="src\Wall.cs" Line="16" Column="4" />
+      <File FileName="src\Ball.cs" Line="14" Column="4" />
+      <File FileName="src\Brick.cs" Line="35" Column="38" />
+      <File FileName="src\PowerUp.cs" Line="13" Column="36" />
+      <File FileName="src\EnlargenPowerUp.cs" Line="11" Column="3" />
+      <File FileName="src\SpeedUpPowerUp.cs" Line="9" Column="4" />
+      <File FileName="src\SlowBallPowerUp.cs" Line="10" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>

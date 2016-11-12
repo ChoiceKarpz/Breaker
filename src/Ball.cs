@@ -28,13 +28,6 @@ namespace MyGame
 		//ball should check if it collides with any of the walls or paddles, and reflects appropriately 
 		public override void CheckCollision ()
 		{
-			//Circle ball = new Circle ();
-			//Rectangle rect = new Rectangle ();
-			//Point2D ballLocation = new Point2D ();
-			//ballLocation.X = XLocation;
-			//ballLocation.Y = YLocation;
-			//ball.Center = ballLocation;
-			//ball.Radius = _radius;
 
 			//check if ball is off screen
 			if (XLocation + _radius > GameMain.ScreenWidth || XLocation - _radius < 0 || YLocation + _radius > GameMain.ScreenHeight || YLocation - _radius < 0)

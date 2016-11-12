@@ -8,16 +8,18 @@ namespace MyGame
 {
 	public static class PlayingField
 	{
+		//create bricks, walls and other elements that are needed for the game
 		public static List<Brick> _Bricks = new List<Brick>();
 		public static List<Wall> _Walls = new List<Wall>();
 		public static List<PowerUp> _ActivePowerUps = new List<PowerUp> ();
 		public static Player myPlayer = new Player ();
 
+		//create a random number which is used for setting the ball's horizontal speed
 		public static Random myRandom = new Random ();
-		private static float randomXDirection = myRandom.Next (0);
+		private static float randomXDirection = myRandom.Next (-2, 3);
 		public static Ball myBall = new Ball (randomXDirection);
 
-
+		//define the default brick colours which are used if the JSON is invalid
 		public static Color BrickColor = Color.Red;
 		public static Color BrickOutlineColor = Color.DarkRed;
 

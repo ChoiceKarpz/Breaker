@@ -17,7 +17,9 @@ namespace MyGame
 			//make game objects
 			PlayingField.GenerateWalls ();
 			PlayingField.GenerateBricks ();
+			//draw the field
 			PlayingField.DrawField ();
+			//pause the screen for 5 seconds so they have time to take in what is happening before the game starts
 			Thread.Sleep (5000);
 
 
@@ -29,16 +31,20 @@ namespace MyGame
                 //Fetch the next batch of UI interaction
                 SwinGame.ProcessEvents();
 
-				//Clear the screen and draw the framerate
+				//Clear the screen, process user imput, draw the screen, and check that the board doesn't need resetting
 
 				PlayingField.DrawField ();
 				PlayingField.ProcessInput ();
 				PlayingField.ProcessMovement ();
+
+				//check the health of each brick and wall, which then delete themselves if they do not have any health left
 				PlayingField.CheckHealthOfField ();
 
+				//check that the ball hasn't gone off of the screen
 				if (PlayingField.CheckGameOver () == true)
 					break;
 
+				//check that the bricks don't need resetting
 				if (PlayingField.NumberOfBricks <= 0) {
 					PlayingField.ResetBricks ();
 					PlayingField.myBall.ResetLocation ();
@@ -50,7 +56,9 @@ namespace MyGame
 				}
             }
 
+			//call a method to display a game over screen, which includes the score the user got
 			PlayingField.DisplayGameOver ();
+			//pause for 5 seconds before the program closes so they have time to read what is on the screen
 			Thread.Sleep (5000);
         }
     }
