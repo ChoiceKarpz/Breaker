@@ -1,5 +1,8 @@
 ﻿using System;
 using SwinGameSDK;
+
+//this class outlines all the basics that each movable object within the game as in addition to those defined by the gameobject class
+
 namespace MyGame
 {
 	public abstract class MovableObject : GameObject
@@ -37,6 +40,7 @@ namespace MyGame
 			YLocation += YSpeed;
 		}
 
+		//the check collision is absract because some game objects check for their collisions differently 
 		public abstract void CheckCollision ();
 
 	}

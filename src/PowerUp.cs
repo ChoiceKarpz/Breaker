@@ -1,6 +1,8 @@
 ﻿using System;
 using SwinGameSDK;
 
+//this class defines the basics of each type of powerup within the game
+
 namespace MyGame
 {
 	public abstract class PowerUp : MovableObject
@@ -10,6 +12,7 @@ namespace MyGame
 		{
 		}
 
+		//the activate method is abstract because each type of powerup does something different upon activation
 		public abstract void Activate ();
 
 		public override void Draw ()

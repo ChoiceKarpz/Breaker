@@ -1,6 +1,8 @@
 ﻿using System;
 using SwinGameSDK;
 
+//this object outlines all the basics that every object (paddle/player, brick, ball etc.) within the game have
+
 namespace MyGame
 {
 	public abstract class GameObject
@@ -16,6 +18,7 @@ namespace MyGame
 			_color = c;
 		}
 
+		//the draw method is abstract because each game object draws itself differently 
 		public abstract void Draw ();
 
 		public float XLocation {

@@ -115,6 +115,7 @@ namespace MyGame
 		
 		}
 
+		//reset the location of the ball and alter its x speed so that it goes straight up/down
 		public void ResetLocation ()
 		{
 			XLocation = 400;
@@ -122,11 +123,13 @@ namespace MyGame
 			XSpeed = 0;
 		}
 
+		//invert the sign on an integer
 		public float Reflect (float n)
 		{
 			return n * -1;
 		}
 
+		//increase the y speed of the ball by 3 pixels; this is called when the board resets
 		public void IncreaseSpeed ()
 		{
 			if (YSpeed > 0)
@@ -135,6 +138,7 @@ namespace MyGame
 				YSpeed -= 3;
 		}
 
+		//decrease the y speed of the ball by 1 pixel; this is called when the user picks up a powerup which slows the ball
 		public void DecreaseSpeed ()
 		{
 			float oldSpeed = YSpeed;

@@ -9,6 +9,7 @@ namespace MyGame
 		{
 		}
 
+		//when this powerup is activated, increase the width of the paddle
 		public override void Activate ()
 		{
 			PlayingField.myPlayer.IncreaseWidth ();

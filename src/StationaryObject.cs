@@ -1,5 +1,8 @@
 ﻿using System;
 using SwinGameSDK;
+
+//this class outlines all of the basics that each stationary object within the game has in addition to those defined by the gameobject class
+
 namespace MyGame
 {
 	public abstract class StationaryObject : GameObject
@@ -41,6 +44,7 @@ namespace MyGame
 			}
 		}
 
+		//the checkhealth method is abstract because the two stationary objects, walls and bricks, each delete themselves differently when their health is gone
 		public abstract void CheckHealth ();
 
 		public void DecreaseHealth ()
@@ -49,6 +53,7 @@ namespace MyGame
 			DecreaseBrightness ();
 		}
 
+		//this lowers the transperency of the object, making it look as though it is fading away 
 		public void DecreaseBrightness ()
 		{
 			byte ColorTransperency = (byte)(SwinGame.TransparencyOf (Color) * (0.61));

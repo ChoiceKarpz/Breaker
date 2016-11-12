@@ -8,6 +8,7 @@ namespace MyGame
 		{
 		}
 
+		//when this powerup is activated, decrease the vertical speed of the ball
 		public override void Activate ()
 		{
 			PlayingField.myBall.DecreaseSpeed ();
